@@ -107,7 +107,8 @@ int main()
 {
     // Setup game props
     srand(time(nullptr));
-    
+    int score = 0;
+
 	// Pick random word from the list of words
 	vector<string> choice = getRandomWord();
 	string word = choice[WORD]; // word to guess
@@ -134,7 +135,9 @@ int main()
         }
         else if (guess == word)
         {
+            score += 25;
             cout << "You got it! The word was: " << word << endl;
+            cout << "You have " << score << " points!" << endl;
 			char continueGame = 'n';
             cout << "Do you want to play again? (y/n): ";
 			cin >> continueGame;
@@ -155,6 +158,8 @@ int main()
         {
 			cout << "Sorry, that's not it. Try again." << endl;
             attempts--;
+            score -= 10;
+            cout << "You have " << score << " points" << endl;
         }
         cout << "\nYour guess: ";
         cin >> guess;
@@ -162,10 +167,13 @@ int main()
 
     // Exit the game
     if (attempts == 0) {
-        cout << "oh! You've spent all your attempts.\nSee you next time!" << endl;
+        cout << "oh! You've spent all your attempts." << endl;
+        cout << "Final score: " << score << " points." << endl;
+        cout << "See you next time!" << endl;
     }
     else
     {
+        cout << "Final score: " << score << " points." << endl;
         cout << "Good bye! See you next time!" << endl;
     }
 
