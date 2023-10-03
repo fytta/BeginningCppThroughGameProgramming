@@ -117,7 +117,7 @@ int main()
     std::cout << "¡¡ Welcome to Guess the Number !! " << endl;
     std::cout << "##################################" << endl;
 
-    srand(time(nullptr)); // inicializar la semilla de los numeros aleatorios
+    srand(static_cast<unsigned int>(time(0))); // inicializar la semilla de los numeros aleatorios
     Menu menu;
     Player player;
 

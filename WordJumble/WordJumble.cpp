@@ -106,7 +106,7 @@ vector<string> getRandomWord()
 int main()
 {
     // Setup game props
-    srand(time(nullptr));
+    srand(static_cast<unsigned int>(time(0)));
     int score = 0;
 
 	// Pick random word from the list of words
