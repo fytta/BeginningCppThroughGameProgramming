@@ -8,7 +8,6 @@ using namespace std;
 // functions definition
 string askText(string prompt);
 int askNumber(string prompt);
-void tellStory(string &name, string &noun, int number, string &bodyPart, string &verb);
 void tellStory(string* name, string* noun, int number, string* bodyPart, string* verb);
 
 int main()
@@ -21,10 +20,7 @@ int main()
 	string bodyPart = askText("Please enter a body part: ");
 	string verb = askText("Please enter a verb: ");
 
-	tellStory(name, noun, number, bodyPart, verb);
-	cout << endl << endl;
 	tellStory(&name, &noun, number, &bodyPart, &verb);
-
 	return 0;
 }
 
@@ -44,35 +40,6 @@ int askNumber(string prompt)
 	return num;
 }
 
-// Passing strings as references
-void tellStory(string &name, string &noun, int number, string &bodyPart, string &verb)
-{
-	cout << "\nHere's your story:\n";
-	cout << "The famous explorer ";
-	cout << name;
-	cout << " had nearly given up a life-long quest to find\n";
-	cout << "The Lost City of ";
-	cout << noun;
-	cout << " when one day, the ";
-	cout << noun;
-	cout << " found the explorer.\n";
-	cout << "Surrounded by ";
-	cout << number;
-	cout << " " << noun;
-	cout << ", a tear came to ";
-	cout << name << "'s ";
-	cout << bodyPart << ".\n";
-	cout << "After all this time, the quest was finally over. ";
-	cout << "And then, the ";
-	cout << noun << "\n";
-	cout << "promptly devoured ";
-	cout << name << ". ";
-	cout << "The moral of the story? Be careful what you ";
-	cout << verb;
-	cout << " for.";
-}
-
-// Passing strings as pointers
 void tellStory(string* name, string* noun, int number, string* bodyPart, string* verb)
 {
 	cout << "\nHere's your story:\n";
