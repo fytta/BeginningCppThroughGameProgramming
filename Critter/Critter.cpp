@@ -16,6 +16,7 @@ public:
     void talk();
     void eat(int food = 4);
     void play(int fun = 4);
+    void showValues();
 
 private:
     int m_Hunger = 0;
@@ -51,6 +52,12 @@ void Critter::passTime(int time)
 {
     m_Hunger += time;
     m_Boredom += time;
+}
+
+void Critter::showValues()
+{
+    cout << "Hungry: " << m_Hunger;
+    cout << "Boredom: " << m_Boredom << endl;
 }
 
 void Critter::talk()
@@ -114,6 +121,7 @@ int main()
         cout << "1 - Listen to your critter\n";
         cout << "2 - Feed your critter\n";
         cout << "3 - Play with your critter\n\n";
+        cout << "4 - Show critter values\n\n";
         cout << "Choice: ";
         cin >> choice;
         switch (choice)
@@ -129,6 +137,9 @@ int main()
             break;
         case 3:
             crit.play();
+            break;
+        case 4:
+            crit.showValues();
             break;
         default:
             cout << "\nSorry, but " << choice << " isn't a valid choice.\n";
