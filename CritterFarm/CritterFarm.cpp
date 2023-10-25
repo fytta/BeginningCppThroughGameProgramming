@@ -43,6 +43,7 @@ class Farm
 
 public:
     Farm(int spaces = 1);
+    ~Farm();
     void add(const Critter* critter);
     void rollCall() const;
     void kickCritter(int index);
@@ -69,9 +70,8 @@ void Farm::kickCritter(int index)
     delete ptrCritter;
 }
 
-void Farm::clear()
+Farm::~Farm()
 {
-    m_Critters.erase(m_Critters.begin()+1);
     for (const Critter* ptrCritter : m_Critters)
     {
         delete ptrCritter;
@@ -116,7 +116,6 @@ int main()
     //myFarm.kickCritter(1);
     //myFarm.rollCall();
 
-    myFarm.clear();
     return 0;
 }
 
