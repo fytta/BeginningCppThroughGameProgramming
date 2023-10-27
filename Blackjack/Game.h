@@ -9,6 +9,9 @@
 class Game
 {
 public:
+	Game(const vector<string>& aNames);
+	~Game();
+
 	/// <summary>
 	///		Plays a round of Blackjack.
 	/// </summary>

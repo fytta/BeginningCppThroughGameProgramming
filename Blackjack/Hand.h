@@ -17,7 +17,7 @@ public:
 	void Clear();
 	int GetTotal() const;
 
-private:
+protected:
 	vector<Card*> m_Cards;
 };
 

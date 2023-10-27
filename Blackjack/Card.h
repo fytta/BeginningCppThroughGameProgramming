@@ -9,11 +9,11 @@ class Card
 {
 public:
 	enum rank { ACE = 1, TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, TEN, JACK, QUEEN, KING };
-	enum suit { CLUBS, DIAMONS, HERATS, SPADES };
+	enum suit { CLUBS, DIAMONS, HEARTS, SPADES };
 
 	friend ostream& operator<<(ostream& os, const Card& aCard);
 
-	Card(rank r, suit s, bool isFaceUp);
+	Card(rank r, suit s, bool isFaceUp=true);
 
 	/// <summary>
 	///		Return value of the card, 1 to 11.
